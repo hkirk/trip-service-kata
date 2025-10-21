@@ -15,7 +15,7 @@ let GetTripsByUser (user: User): Trip list =
         for f in user.Friends do
             if f = Option.get loggedInUser
             then
-                friend <- Some f
+                friend <- Some user
         if (Option.isSome friend)
         then
             tripList <- FindTripsByUser (Option.get friend)
